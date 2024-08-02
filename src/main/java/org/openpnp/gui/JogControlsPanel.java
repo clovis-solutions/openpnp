@@ -124,11 +124,12 @@ public class JogControlsPanel extends JPanel {
     private void setUnits(LengthUnit units) {
         if (units == LengthUnit.Millimeters) {
             Hashtable<Integer, JLabel> incrementsLabels = new Hashtable<>();
-            incrementsLabels.put(1, new JLabel("0.01")); //$NON-NLS-1$
-            incrementsLabels.put(2, new JLabel("0.1")); //$NON-NLS-1$
-            incrementsLabels.put(3, new JLabel("1.0")); //$NON-NLS-1$
-            incrementsLabels.put(4, new JLabel("10")); //$NON-NLS-1$
-            incrementsLabels.put(5, new JLabel("100")); //$NON-NLS-1$
+            incrementsLabels.put(1, new JLabel("0.001")); //$NON-NLS-1$
+            incrementsLabels.put(2, new JLabel("0.01")); //$NON-NLS-1$
+            incrementsLabels.put(3, new JLabel("0.1")); //$NON-NLS-1$
+            incrementsLabels.put(4, new JLabel("1.0")); //$NON-NLS-1$
+            incrementsLabels.put(5, new JLabel("10")); //$NON-NLS-1$
+            incrementsLabels.put(6, new JLabel("100")); //$NON-NLS-1$
             sliderIncrements.setLabelTable(incrementsLabels);
         }
         else if (units == LengthUnit.Inches) {
@@ -148,7 +149,7 @@ public class JogControlsPanel extends JPanel {
 
     public double getJogIncrement() {
         if (configuration.getSystemUnits() == LengthUnit.Millimeters) {
-            return 0.01 * Math.pow(10, sliderIncrements.getValue() - 1);
+            return 0.001 * Math.pow(10, sliderIncrements.getValue() - 1);
         }
         else if (configuration.getSystemUnits() == LengthUnit.Inches) {
             return 0.001 * Math.pow(10, sliderIncrements.getValue() - 1);
@@ -349,7 +350,7 @@ public class JogControlsPanel extends JPanel {
         sliderIncrements.setSnapToTicks(true);
         sliderIncrements.setPaintLabels(true);
         sliderIncrements.setMinimum(1);
-        sliderIncrements.setMaximum(5);
+        sliderIncrements.setMaximum(6);
 
         JButton yPlusButton = new JButton(yPlusAction);
         yPlusButton.setHideActionText(true);
@@ -479,6 +480,8 @@ public class JogControlsPanel extends JPanel {
         boardProtectionOverrideCheck.setToolTipText(
                 Translations.getString("JogControlsPanel.Label.OverrideBoardProtection.Description")); //$NON-NLS-1$
         panelSafety.add(boardProtectionOverrideCheck, "1, 1"); //$NON-NLS-1$
+
+        
     }
 
     private FocusTraversalPolicy focusPolicy = new FocusTraversalPolicy() {
