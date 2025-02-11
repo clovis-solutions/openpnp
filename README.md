@@ -45,3 +45,5 @@ Many thanks to ej-technologies for providing a complimentary license of install4
 creates high quality, professional installers for Java applications.
 
 More information at http://www.ej-technologies.com/products/install4j/overview.html.
+
+java --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.desktop/java.awt=ALL-UNNAMED --add-opens java.desktop/sun.awt=ALL-UNNAMED --add-opens java.desktop/javax.swing=ALL-UNNAMED -jar target/openpnp-gui-0.0.1-alpha-SNAPSHOT-jar-with-dependencies.jar

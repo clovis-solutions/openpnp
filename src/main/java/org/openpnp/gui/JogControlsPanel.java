@@ -127,9 +127,9 @@ public class JogControlsPanel extends JPanel {
             incrementsLabels.put(1, new JLabel("0.001")); //$NON-NLS-1$
             incrementsLabels.put(2, new JLabel("0.01")); //$NON-NLS-1$
             incrementsLabels.put(3, new JLabel("0.1")); //$NON-NLS-1$
-            incrementsLabels.put(4, new JLabel("1.0")); //$NON-NLS-1$
-            incrementsLabels.put(5, new JLabel("10")); //$NON-NLS-1$
-            incrementsLabels.put(6, new JLabel("100")); //$NON-NLS-1$
+            incrementsLabels.put(4, new JLabel("0.0")); //$NON-NLS-1$
+            incrementsLabels.put(5, new JLabel("1.0")); //$NON-NLS-1$
+            incrementsLabels.put(6, new JLabel("10.0")); //$NON-NLS-1$
             sliderIncrements.setLabelTable(incrementsLabels);
         }
         else if (units == LengthUnit.Inches) {
